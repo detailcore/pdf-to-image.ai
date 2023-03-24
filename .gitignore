@@ -1,0 +1,7 @@
+/node_modules
+.env
+.env.js
+.env.backup
+package-lock.json
+/.vscode
+/Nginx_1.23_vhost.conf
