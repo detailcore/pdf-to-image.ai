@@ -37,8 +37,41 @@ a,
 
 .file-upload {
   input[type="file"]{
+    opacity: 0;
     display: none;
     visibility: hidden;
+  }
+  input[type="number"]{
+    max-width: 40px;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 1.15rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: bold;
+    padding-right: 4px;
+  }
+  .output {
+    margin: 12px 0;
+    .params {}
+    .param {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      min-height: 32px;
+    }
+    .radio {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      label {
+        cursor: pointer;
+        margin: 0px 11px 0px 1px;
+      }
+    }
   }
   .list {
     .remove {
@@ -47,4 +80,14 @@ a,
       font-weight: bold;
     }
   }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  padding: 12px;
+}
+
+.red {
+  color: #920909;
 }

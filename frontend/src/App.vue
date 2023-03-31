@@ -1,13 +1,5 @@
 <template>
-  <header>
-    <div class="wrapper">
-      Выберите файл(ы) формата .pdf
-    </div>
-  </header>
-
-  <main>
-    <MultipleFiles />
-  </main>
+  <MultipleFiles />
 </template>
 
 
