@@ -139,7 +139,7 @@
           zip.file(item.page +'.'+ extOut.value, item.content.data) // Добавляем в архив страницы          
         }
         zip.generateAsync({type:"blob"}).then(function (content) {
-          saveAs(content, (result[0].name).replace('.pdf', '') + '.zip')
+          saveAs(content, (result[0].name).replace('.pdf', '').replace('.zip', '') + '.zip')
         }, function (err) {
           console.log('ERROR =>', err)
         })

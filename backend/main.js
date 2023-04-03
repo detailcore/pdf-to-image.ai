@@ -117,11 +117,6 @@ async function getFilesBufferFromArchive({ name, data }) {
     }
 
     result = await convert2Ext(tmpBuff, name, extOut)
-    // try {
-      
-    // } catch (error) {
-    //   console.log('qwe qwe', error);
-    // }
 
     return result
 
@@ -304,10 +299,13 @@ function isPdf(buf) {
  * @returns {Number}
  */
 async function getArrDivideSize(buff) {
-  let size = 30
+  let size = 30,
+      max = (extOut === 'webp') ? 16380 : 16000 // max 16380px for .webp
   const { height } = await sharp(buff).metadata()
 
-  while ((size*height) > 16380) size--
+  while ((size*height) > max) size--
 
-  return size-1
+  size = (extOut === 'webp') ? size-1 : size
+
+  return size
 } 
