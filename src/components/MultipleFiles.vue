@@ -68,6 +68,8 @@
   const extOut = ref('jpeg')
   const scale = ref(1)
   const isWeb = ref(true)
+  const urlUpload = `http://localhost:${import.meta.env.VITE_SERVER_PORT}/api/`
+  const urlConvert = `http://localhost:${import.meta.env.VITE_SERVER_PORT}/api/processing`
 
   const isPdf = (name) => {
     return name.split('.').pop() === 'pdf'
@@ -100,7 +102,7 @@
       data.append('files', file)
       data.append('json', JSON.stringify({ extOut: extOut.value, scale: scale.value, isWeb: +isWeb.value }))
 
-      const res = await fetch(`http://localhost:${import.meta.env.VITE_SERVER_PORT}/api/`, {
+      const res = await fetch(urlUpload, {
         method: 'POST',
         credentials: 'include',
         body: data,
@@ -120,7 +122,7 @@
 
   const waitConverting = async (name) => {
     try {
-      const res = await fetch(`http://localhost:${import.meta.env.VITE_SERVER_PORT}/api/processing`, {
+      const res = await fetch(urlConvert, {
         method: 'POST',
         credentials: 'include',
         headers: {
