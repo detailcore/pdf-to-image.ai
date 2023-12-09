@@ -1,7 +1,8 @@
 import app from "./server.js"
+import { PORT } from "../.env.js"
 
 
-// app.listen(3001, process.env.API_DOMAIN, () => {})
-app.listen(6001, 'localhost', () => {
-  console.log('Запущено по адресу:', 'http://localhost' +':' + 6001)
+// app.listen(PORT, process.env.API_DOMAIN, () => {})
+app.listen(PORT, 'localhost', () => {
+  console.log('Запущено по адресу:', 'http://localhost' +':' + PORT)
 })

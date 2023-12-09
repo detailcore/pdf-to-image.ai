@@ -61,6 +61,7 @@
   import { ref } from 'vue'
   import JSZip from 'jszip'
   import { saveAs } from 'file-saver'
+  import { PORT } from '../../../.env.js'
 
   const files = ref([])
   const inputPdf = ref(null)
@@ -100,7 +101,7 @@
       data.append('files', file)
       data.append('json', JSON.stringify({ extOut: extOut.value, scale: scale.value, isWeb: +isWeb.value }))
 
-      const res = await fetch(`http://localhost:3001/api/`, {
+      const res = await fetch(`http://localhost:${PORT}/api/`, {
         method: 'POST',
         credentials: 'include',
         body: data,
@@ -120,7 +121,7 @@
 
   const waitConverting = async (name) => {
     try {
-      const res = await fetch(`http://localhost:3001/api/processing`, {
+      const res = await fetch(`http://localhost:${PORT}/api/processing`, {
         method: 'POST',
         credentials: 'include',
         headers: {
