@@ -2,6 +2,7 @@ module.exports = {
   name: 'pdf-2-img',
   script: 'npm',
   args: 'run auto',
+  interpreter: 'none',
   // script: './backend/index.js',
   exec_mode: 'cluster',
   instances: 1,
