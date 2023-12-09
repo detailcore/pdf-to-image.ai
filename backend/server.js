@@ -13,7 +13,7 @@ app.use(cors({
   credentials: true,
   origin: [
     'http://localhost:5173', // Vite + Vue (dev mode)
-    'http://localhost:3001',
+    'http://localhost:6001',
     // process.env.PROTOCOL + '://' + process.env.API_DOMAIN,
     // process.env.PROTOCOL + '://' + process.env.API_DOMAIN +':' + process.env.PORT,
   ],
