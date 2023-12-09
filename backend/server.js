@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import cors from 'cors'
 import morgan from 'morgan'
 import express from 'express'
@@ -13,7 +16,7 @@ app.use(cors({
   credentials: true,
   origin: [
     'http://localhost:5173', // Vite + Vue (dev mode)
-    'http://localhost:6001',
+    `http://localhost:${process.env.VITE_SERVER_PORT}`,
     // process.env.PROTOCOL + '://' + process.env.API_DOMAIN,
     // process.env.PROTOCOL + '://' + process.env.API_DOMAIN +':' + process.env.PORT,
   ],
